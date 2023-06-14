@@ -1,0 +1,785 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http:/purl.org/ontology/mpo#"
+     xml:base="http:/purl.org/ontology/mpo"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http:/purl.org/ontology/mpo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ontology/fho/hasNext -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/fho/hasNext">
+        <owl:equivalentProperty rdf:resource="http://purl.org/ontology/mpo/hasNextChord"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isFollowedByChord"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/fho/hasPrevious"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasPreviousChord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/fho/hasPrevious -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/fho/hasPrevious">
+        <owl:equivalentProperty rdf:resource="http://purl.org/ontology/mpo/hasPreviousChord"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isFollowingChord"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasNextChord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasBridge -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasBridge">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isBridgeof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasChordProgression -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasChordProgression">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isChordProgressionof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasChorus -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasChorus">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isChorusof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasFirstPartChord -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasFirstPartChord">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isFirstPartChordof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasFirstProgChord -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasFirstProgChord">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isFirstProgChordof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasFirstTrackChord -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasFirstTrackChord">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isFirstTrackChordof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasGenre -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasGenre">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isGenreof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasInstrumental -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasInstrumental">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isInstrumentalof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasInterlude -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasInterlude">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isInterludeof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasIntro -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasIntro">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isIntroof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasLastPartChord -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasLastPartChord">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isLastPartChordof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasLastProgChord -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasLastProgChord">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isLastProgChordof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasLastTrackChord -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasLastTrackChord">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isLastTrackChordof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasNextChord -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasNextChord">
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/fho/hasPrevious"/>
+                <owl:equivalentProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasPreviousChord"/>
+                    </rdf:Description>
+                </owl:equivalentProperty>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isFollowedByChord"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasPreviousChord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasNextChordProgression -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasNextChordProgression">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isFollowedByChordProgression"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasPreviousChordProgression"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasNextPart -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasNextPart">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isFollowedByPart"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasPreviousPart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasOutro -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasOutro">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isOutroof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasPart">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasPartChord -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasPartChord">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isPartChordof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasPreviousChord -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasPreviousChord">
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/fho/hasNext"/>
+                <owl:equivalentProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasNextChord"/>
+                    </rdf:Description>
+                </owl:equivalentProperty>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isFollowingChord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasPreviousChordProgression -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasPreviousChordProgression">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isFollowingChordProgression"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasPreviousPart -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasPreviousPart">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isFollowingPart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasProgChord -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasProgChord">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isProgChordof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasSolo -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasSolo">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isSoloof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasVerse -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/hasVerse">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isVerseof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isBridgeof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isBridgeof">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isChordProgressionof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isChordProgressionof"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isChorusof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isChorusof">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isFirstPartChordof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isFirstPartChordof"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isFirstProgChordof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isFirstProgChordof"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isFirstTrackChordof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isFirstTrackChordof"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isFollowedByChord -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isFollowedByChord">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isFollowingChord"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isFollowedByChordProgression -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isFollowedByChordProgression">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isFollowingChordProgression"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isFollowedByPart -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isFollowedByPart">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/isFollowingPart"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isFollowingChord -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isFollowingChord">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isFollowingChordProgression -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isFollowingChordProgression">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isFollowingPart -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isFollowingPart">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isGenreof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isGenreof"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isInstrumentalof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isInstrumentalof">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isInterludeof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isInterludeof">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isIntroof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isIntroof">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isLastPartChordof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isLastPartChordof"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isLastProgChordof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isLastProgChordof"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isLastTrackChordof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isLastTrackChordof"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isOutroof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isOutroof">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isPartChordof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isPartChordof"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isPartof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isPartof"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isProgChordof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isProgChordof"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isSoloof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isSoloof">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/isVerseof -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/mpo/isVerseof">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mpo/isPartof"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.org/ontology/mpo/hasPart"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ontology/mpo/hasChordCount -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ontology/mpo/hasChordCount">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ontology/fho/Chord -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/fho/Chord">
+        <owl:equivalentClass rdf:resource="http://purl.org/ontology/mpo/Chord"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Blues -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Blues">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Bridge -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Bridge">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Chord -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Chord"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/ChordProgression -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/ChordProgression"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Chorus -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Chorus">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Folk -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Folk">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Genre -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Genre"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Hip_hop -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Hip_hop">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/House -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/House">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Indie -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Indie">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Instrumental -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Instrumental">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Interlude -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Interlude">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Intro -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Intro">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Jazz -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Jazz">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Metal -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Metal">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Outro -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Outro">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Part -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Part"/>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Pop -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Pop">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Punk -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Punk">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Rap -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Rap">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Reggae -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Reggae">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Rock -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Rock">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Solo -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Solo">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Soul -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Soul">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/TrackChordProgression -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/TrackChordProgression">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/ChordProgression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/TrackPart -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/TrackPart">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/mpo/Verse -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/mpo/Verse">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mpo/Part"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
