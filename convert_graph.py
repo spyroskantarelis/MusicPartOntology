@@ -62,14 +62,14 @@ def hasNext_function(track,track_chord_progression, OntoProperty, OntoFirst, Ont
         else:
             chord_count[chord] += 1
         if (i == 0) and (OntoFirst is not None):
-            # setattr(chord, OntoFirst, track)
+           
             g.add((chord, OntoFirst, track))
         if (i == len(track_chord_progression) - 1) and (OntoLast is not None):
-            # setattr(chord, OntoLast, track)
+           
             g.add((chord, OntoLast, track))
 
         if prev_chord is not None:
-            # setattr(prev_chord, OntoProperty, chord)
+            
             g.add((prev_chord, OntoProperty, chord))
         
         prev_chord = chord
@@ -83,12 +83,11 @@ def hasFirstandLast_function(track_dict, OntoFirst, OntoLast, OntoChord,g):
         else:
             first_element = value_list[0]
             last_element = value_list[0]
-        # setattr(key, OntoFirst, first_element)
-        # setattr(key, OntoLast, last_element)
+        
         g.add((key, OntoFirst, first_element))
         g.add((key, OntoLast, last_element))
         for j in value_list:
-            # getattr(key, OntoChord).append(j)
+            
             g.add((key,OntoChord,j))
 
 def findChordProgressions(part_instance,elements, part_name, OntoPart, OntoFirst, OntoLast, OntoCounting, OntoChord, min_length, max_length,g, id):
@@ -109,40 +108,38 @@ def findChordProgressions(part_instance,elements, part_name, OntoPart, OntoFirst
 
             if is_unique:
                 unique_combinations.append(current_combination)
-                # progression_instance = OntoClass(f"{part_instance}_{'ChordProgression'}_{c}")
+                
                 progression_instance = mpo[f"{str(genres[id]) + '_'+ str(ids[id])}_{part_name}_{'ChordProgression'}_{c}"]
                 g.add((progression_instance, RDF.type, class_progression))
                 chord_progression_instances.append(progression_instance)
                 c +=1
-                # getattr(part_instance, OntoPart).append(progression_instance)
+               
                 g.add((part_instance, OntoPart, progression_instance))
                 first_element = current_combination[0]
                 last_element = current_combination[-1]
-                # setattr(progression_instance, OntoFirst, first_element)
-                # setattr(progression_instance, OntoLast, last_element)
+               
                 g.add((progression_instance, OntoFirst, first_element))
                 g.add((progression_instance, OntoLast, last_element))
                 for j in current_combination:
-                    # getattr(progression_instance, OntoChord).append(j)
+                    
                     g.add((progression_instance, OntoChord,j))
                 chord_count = 0
                 for j in current_combination:
                     chord_count += 1
-                # setattr(progression_instance, OntoCounting, chord_count)
+              
                 # Convert the integer to a Literal object
                 chord_count_literal = Literal(chord_count)
                 g.add((progression_instance, OntoCounting, chord_count_literal))
                 counting[progression_instance] = chord_count
 
     
-    # for i in range(len(chord_progression_instances)-1):
-    #     setattr(chord_progression_instance[i], OntoNext, progression_instance[i+1])
+  
     for i in chord_progression_instances:
         combinations.append((i,counting[i]))
     return combinations
 
 start_time = time.time()
-# for i in range(len(ids)):
+
 for i in range(2):
     if i % 10 == 0:
         print(i)
@@ -180,8 +177,7 @@ for i in range(2):
     part_count = {}
     dummy_part = ''
     for part in track_list:
-        # dummy_part = ''
-
+       
         if part.startswith('<'):
             new_part = part.replace('<','').replace('>','')
             if part not in part_count:
@@ -212,7 +208,7 @@ for i in range(2):
 
     if current_key is not None:
         track_dict[current_key] = current_value
-    # print(track_dict)
+    
     track_chord_progression = []
     for value_list in track_dict.values():
         track_chord_progression.extend(value_list)
@@ -231,22 +227,13 @@ for i in range(2):
 
     new_list = list(itertools.chain(*full_chord_progression_instances))
     for prog in range(len(new_list)-1):
-        # setattr(new_list[i], onto.hasNextChordProgression, new_list[i+1]) 
+        
         counter = new_list[prog][1]
         if ((prog+counter) < len(new_list)) and (new_list[prog+counter][1] == counter):
-        # if (new_list[prog][1]) == (new_list[prog+1][1]):
+      
             g.add((new_list[prog][0], has_next_progression, new_list[prog+1][0]))
 
 
 
-    g.serialize(destination='/home/spyroskanta/Desktop/rdf_songs_new/' + str(genres[i]) + '_'+ str(ids[i]) + '.owl', format='xml')
-    # g.serialize(destination='/home/spyroskanta/Desktop/rdf_songs_new/' + str(genres[i]) + '_'+ str(ids[i]) + '.json', format='json-ld')
-    # g.serialize(destination='/home/spyroskanta/Desktop/rdf_songs/' + str(i) + '.owl', format='xml')
-
-
-
-    # # Serialize the graph in Turtle format
-    # serialized_graph = g.serialize(format='turtle')
-
-# # Print the serialized graph
-# print(serialized_graph)
+    g.serialize(destination='destination '.owl', format='xml')
+   
