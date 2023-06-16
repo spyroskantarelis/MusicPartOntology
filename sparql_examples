@@ -1,0 +1,44 @@
+ii-V-I for Rock
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prop: <http://example.org/props/>
+PREFIX mpo: <http://purl.org/ontology/mpo/>
+PREFIX fho: <http://purl.org/ontology/fho/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+select ?prog ?track ?x ?y ?w
+where {
+  ?prog rdf:type mpo:ChordProgression.
+?x rdf:type fho:MixolydianDominant.
+?y rdf:type fho:Dominant.
+?x fho:hasNext ?y.
+    ?y fho:hasNext ?w.
+   ?prog mpo:hasFirstProgChord ?x.
+    ?prog mpo:hasLastProgChord ?w.
+    ?prog mpo:isChordProgressionof ?part.
+    ?part mpo:isPartof ?track.
+    ?track mpo:hasGenre mpo:Rock.
+}
+
+vi-IV-I-V
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prop: <http://example.org/props/>
+PREFIX mpo: <http://purl.org/ontology/mpo/>
+PREFIX fho: <http://purl.org/ontology/fho/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+select ?prog ?genre ?x ?y ?w ?z
+where {
+  ?prog rdf:type mpo:ChordProgression.
+?w rdf:type fho:MixolydianSubdominant.
+?y rdf:type fho:IonianSubdominant.
+ ?x rdf:type fho:LydianRelativeDominant.
+    
+?x fho:hasNext ?y.
+    ?y fho:hasNext ?w.
+    ?w fho:hasNext ?z.
+   ?prog mpo:hasFirstProgChord ?x.
+    ?prog mpo:hasLastProgChord ?z.
+    ?prog mpo:isChordProgressionof ?part.
+    ?part mpo:isPartof ?track.
+    ?track mpo:hasGenre ?genre.
+}
