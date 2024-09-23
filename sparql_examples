@@ -26,7 +26,7 @@ PREFIX prop: <http://example.org/props/>
 PREFIX mpo: <http://purl.org/ontology/mpo/>
 PREFIX fho: <http://purl.org/ontology/fho/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-select ?prog ?genre ?x ?y ?w ?z
+select ?prog ?genre ?track ?x ?y ?w ?z
 where {
   ?prog rdf:type mpo:ChordProgression.
 ?w rdf:type fho:MixolydianSubdominant.
